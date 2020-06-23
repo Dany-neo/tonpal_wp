@@ -1,0 +1,55 @@
+{
+    "name": "contacts配置文件",
+    "action": "portal/contacts",
+    "description": "contacts配置文件",
+    "order": 6.0,
+    "more": {
+        "vars": {
+            "seoTitle": {
+                "title": "seo title",
+                "value": "",
+                "type": "text",
+                "tip": "title",
+                "rule": {
+                    "require": true
+                }
+            },
+            "seoDescription": {
+                "title": "seo Description",
+                "value": "",
+                "type": "text",
+                "tip": "Description",
+                "rule": {
+                    "require": true
+                }
+            },
+            "seoKeywords": {
+                "title": "seo Keywords",
+                "value": "",
+                "type": "text",
+                "tip": "Keywords",
+                "rule": {
+                    "require": true
+                }
+            },
+            "title": {
+                "title": "标题",
+                "value": "CONTACT",
+                "type": "text",
+                "tip": "请填写标题",
+                "rule": {
+                    "require": true
+                }
+            },
+            "desc": {
+                "title": "描述",
+                "value": "After the 20th century, the world has basically entered a peaceful era. The competition between countries is reflected in the competition of economic strength, which is actually the competition of strength between companies and enterprises. Through interviews with five Nobel laureates and nine professors from internationally renowned business schools, the documentary helps us to interpret the role of Companies in economic and national development, and puts forward some laws of company development.",
+                "type": "textarea",
+                "tip": "描述",
+                "rule": {
+                    "require": true
+                }
+            }
+        }
+    }
+}

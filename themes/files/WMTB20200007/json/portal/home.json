@@ -1,0 +1,505 @@
+{
+    "name": "首页配置文件",
+    "action": "portal/home",
+    "description": "首页模板文件",
+    "order": 6.0,
+    "more": {
+        "vars": {
+            "seoTitle": {
+                "title": "seo title",
+                "value": "",
+                "type": "text",
+                "tip": "title",
+                "rule": {
+                    "require": true
+                }
+            },
+            "seoDescription": {
+                "title": "seo Description",
+                "value": "",
+                "type": "text",
+                "tip": "Description",
+                "rule": {
+                    "require": true
+                }
+            },
+            "seoKeywords": {
+                "title": "seo Keywords",
+                "value": "",
+                "type": "text",
+                "tip": "Keywords",
+                "rule": {
+                    "require": true
+                }
+            }
+        },
+        "widgets": {
+            "carousel": {
+                "title": "轮播图组件",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "轮播图组件",
+                        "value": [
+                            {
+                                "title": "",
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/banner02.jpg"
+                            },
+                            {
+                                "title": "",
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/banner01.jpg"
+                            },
+                            {
+                                "title": "",
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/banner02.jpg"
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "title": {
+                                "title": "标题",
+                                "value": "",
+                                "type": "text",
+                                "tip": "图片alt",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "image": {
+                                "title": "轮播图片",
+                                "value": "",
+                                "type": "image",
+                                "tip": "轮播图片"
+                            }
+                        },
+                        "tip": "这是轮播图组件",
+                        "maxNumber": 5,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "welcome": {
+                "title": "欢迎模块",
+                "display": "1",
+                "vars": {
+                    "title": {
+                        "title": "标题",
+                        "value": "Welcome To REBUILD",
+                        "type": "text",
+                        "tip": "eg:Welcome To REBUILD",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "desc": {
+                        "title": "描述",
+                        "value": "As a leading global outdoor patio decking price, we offer the best products.",
+                        "type": "textarea",
+                        "tip": "具体描述"
+                    }
+                }
+            },
+            "indexAd": {
+                "title": "优势展示",
+                "display": "1",
+                "vars": {
+                    "title": {
+                        "title": "标题",
+                        "value": "WHY CHOOSE US",
+                        "type": "text",
+                        "tip": "请输入标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "desc": {
+                        "title": "描述",
+                        "value": "We can provide free sample about composite products, and wholesale outdoor cheap wpc flooring sale , get the customer's praise.",
+                        "type": "textarea",
+                        "tip": ""
+                    },
+                    "items": {
+                        "title": "优势明细",
+                        "value": [
+                            {
+                                "image": "http://img3.imgtn.bdimg.com/it/u=1408233282,1483083519&fm=26&gp=0.jpg",
+                                "title": "Product Sales",
+                                "desc": "We can provide free sample about composite products, and wholesale outdoor cheap wpc flooring sale get the customer's praise."
+                            },
+                            {
+                                "image": "http://img3.imgtn.bdimg.com/it/u=1408233282,1483083519&fm=26&gp=0.jpg",
+                                "title": "Our Strengths",
+                                "desc": "To explains the pros and cons of WPC deck materials to help you estimate cost and benefits;in a variety of earth-tones and wood colors to match your outdoor decor."
+                            },
+                            {
+                                "image": "http://img3.imgtn.bdimg.com/it/u=1408233282,1483083519&fm=26&gp=0.jpg",
+                                "title": "Product Certificate",
+                                "desc": "Our has been certificated ISO9001 and ISO14001. and has successfully passed the tests of National Construction Material Bureau, America ASTM standards and CE safety requirements."
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "image": {
+                                "title": "图片",
+                                "value": "",
+                                "type": "image",
+                                "tip": "建议尺寸1:1",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "title": {
+                                "title": "标题",
+                                "value": "",
+                                "type": "text",
+                                "tip": "请输入标题",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "desc": {
+                                "title": "描述",
+                                "value": "",
+                                "type": "textarea",
+                                "tip": ""
+                            }
+                        },
+                        "tip": "建议填满三组数据",
+                        "maxNumber": 3,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "products": {
+                "title": "产品模块",
+                "display": "1",
+                "vars": {
+                    "bg": {
+                        "title": "背景图",
+                        "value": "//demo.tonpal.com/WMTB20200007/assets/images/index_product_bg.jpg",
+                        "type": "image",
+                        "tip": "",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tag": {
+                        "title": "顶部标签",
+                        "value": "POPULAR",
+                        "type": "text",
+                        "tip": "eg:POPULAR",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "title": {
+                        "title": "标题",
+                        "value": "our Products",
+                        "type": "text",
+                        "tip": "eg:our Products",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "desc": {
+                        "title": "描述",
+                        "value": "We can provide free sample about composite products, and wholesale outdoor cheap wpc flooring sale , get the customer's praise.",
+                        "type": "textarea",
+                        "tip": "自定义描述"
+                    },
+                    "items": {
+                        "title": "链接",
+                        "value": [
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd01.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd02.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd03.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd03.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd03.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/index_pd03.jpg",
+                                "title": "Plastic floor",
+                                "link": ""
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "title": {
+                                "title": "标题",
+                                "value": "",
+                                "type": "text",
+                                "tip": "请输入标题",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "image": {
+                                "title": "图片",
+                                "value": "",
+                                "type": "image",
+                                "tip": "建议尺寸1:1",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "link": {
+                                "title": "链接",
+                                "value": "",
+                                "type": "text",
+                                "tip": "请填入相应链接"
+                            }
+                        },
+                        "tip": "建议填满四组数据",
+                        "maxNumber": 4,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "business": {
+                "title": "商业描述",
+                "display": "1",
+                "vars": {
+                    "desc": {
+                        "title": "描述",
+                        "value": "Specializing in the production of Screws for 15 years,products are exported all over the world.",
+                        "type": "textarea",
+                        "tip": "具体描述"
+                    }
+                }
+            },
+            "about": {
+                "title": "关于我们",
+                "display": "1",
+                "vars": {
+                    "title": {
+                        "title": "标题",
+                        "value": "who we are",
+                        "type": "text",
+                        "tip": "eg:ABOUT US",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "desc": {
+                        "title": "描述",
+                        "value": "Guaranteed Industry Co., Ltd, founded in the year 2008, is a hi-tech enterprise which specializes in the R&D, sales, and service of WPC materials. Introducing international core technology, and with the improvement in the recipe of raw materials and production technology, it has formed a product structure system of multi-variety serious of product. Our company is focused on the product quality management, fully complementing the environmental protection awareness, and it’s among the first companies in this industry to be certified with the ISO9001 quality management system, the ISO14001 environmental management system and European CE certification.",
+                        "type": "textarea",
+                        "tip": "文字描述",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "btn": {
+                        "title": "按钮内容",
+                        "value": "See MORE",
+                        "type": "text",
+                        "tip": "建议十个字符左右",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "link": {
+                        "title": "链接",
+                        "value": "",
+                        "type": "text",
+                        "tip": "请填入相应链接"
+                    },
+                    "images": {
+                        "title": "图片展示",
+                        "value": [
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/company_intr_01.jpg",
+                                "alt": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/company_intr_02.jpg",
+                                "alt": ""
+                            }
+                        ],
+                        "item": {
+                            "image": {
+                                "title": "图片",
+                                "value": "",
+                                "type": "image",
+                                "tip": ""
+                            },
+                            "alt": {
+                                "title": "图片缺失时填充内容",
+                                "value": "",
+                                "type": "text",
+                                "tip": "alt属性"
+                            }
+                        },
+                        "type": "array",
+                        "tip": "右侧展示图片",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "brand": {
+                "title": "品牌模块",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "品牌列表",
+                        "value": [
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand04.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand05.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand04.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand05.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand01.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand02.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand04.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand05.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand04.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand05.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand01.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand02.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand04.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand05.png",
+                                "alt": "",
+                                "link": ""
+                            },
+                            {
+                                "image": "//demo.tonpal.com/WMTB20200007/assets/picture/brand03.png",
+                                "alt": "",
+                                "link": ""
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "image": {
+                                "title": "图片",
+                                "value": "",
+                                "type": "image",
+                                "tip": ""
+                            },
+                            "alt": {
+                                "title": "图片缺失时填充内容",
+                                "value": "",
+                                "type": "text",
+                                "tip": "alt属性"
+                            },
+                            "link": {
+                                "title": "品牌链接",
+                                "value": "",
+                                "type": "text",
+                                "tip": ""
+                            }
+                        },
+                        "tip": "建议填满四组数据",
+                        "maxNumber": 4,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

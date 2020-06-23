@@ -1,0 +1,218 @@
+{
+    "name": "footer配置文件",
+    "action": "public/footer",
+    "description": "footer配置文件",
+    "order": 6.0,
+    "more": {
+        "vars": {
+            "footerLogo": {
+                "title": "底部logo",
+                "value": "http://img3.imgtn.bdimg.com/it/u=1408233282,1483083519&fm=26&gp=0.jpg",
+                "type": "image",
+                "tip": ""
+            },
+            "footerDesc": {
+                "title": "底部描述",
+                "value": "Our has been certificated ISO9001 and ISO14001. and has successfully passed the tests of National Construction Material Bureau, America ASTM standards and CE safety requirements.Our has been certificated ISO9001 and ISO14001. and has successfully passed the tests of National Construction Material Bureau, America ASTM standards and CE safety requirements.",
+                "type": "textarea",
+                "tip": ""
+            },
+            "postsTitle": {
+                "title": "底部标题二",
+                "value": "Require Link",
+                "type": "text",
+                "tip": ""
+            },
+            "contactTitle": {
+                "title": "底部标题三",
+                "value": "CONTACT US",
+                "type": "text",
+                "tip": "eg:CONTACT US"
+            },
+            "facebookLink": {
+                "title": "facebook 链接",
+                "value": "//baidu.com",
+                "type": "text",
+                "tip": "未填写则隐藏"
+            },
+            "twitterLink": {
+                "title": "twitter 链接",
+                "value": "//baidu.com",
+                "type": "text",
+                "tip": "未填写则隐藏"
+            },
+            "instagramLink": {
+                "title": "instagram 链接",
+                "value": "//baidu.com",
+                "type": "text",
+                "tip": "未填写则隐藏"
+            },
+            "pinterestLink": {
+                "title": "pinterest 链接",
+                "value": "//baidu.com",
+                "type": "text",
+                "tip": "未填写则隐藏"
+            },
+            "youtubeLink": {
+                "title": "youtube 链接",
+                "value": "//baidu.com",
+                "type": "text",
+                "tip": "未填写则隐藏"
+            }
+        },
+        "widgets": {
+            "tel": {
+                "title": "手机",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "手机",
+                        "value": [
+                            {
+                                "name": "Tel",
+                                "value": "+86 139 2409 9213"
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "name": {
+                                "title": "名称",
+                                "value": "Tel",
+                                "type": "text",
+                                "tip": "Tel",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "value": {
+                                "title": "值",
+                                "value": "",
+                                "type": "text",
+                                "tip": "值"
+                            }
+                        },
+                        "tip": "公共底部和contacts页面需要",
+                        "maxNumber": 1,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "mobile": {
+                "title": "电话",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "电话信息",
+                        "value": [
+                            {
+                                "name": "Mobile",
+                                "value": "400-86-25660"
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "name": {
+                                "title": "名称",
+                                "value": "Fex",
+                                "type": "text",
+                                "tip": "Fex",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "value": {
+                                "title": "值",
+                                "value": "",
+                                "type": "text",
+                                "tip": "值"
+                            }
+                        },
+                        "tip": "公共底部和contacts页面需要",
+                        "maxNumber": 1,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "email": {
+                "title": "邮箱",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "邮箱信息",
+                        "value": [
+                            {
+                                "name": "Email",
+                                "value": "support@company.com"
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "name": {
+                                "title": "名称",
+                                "value": "Email",
+                                "type": "text",
+                                "tip": "Email",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "value": {
+                                "title": "值",
+                                "value": "",
+                                "type": "text",
+                                "tip": "值"
+                            }
+                        },
+                        "tip": "公共底部和contacts页面需要",
+                        "maxNumber": 1,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "address": {
+                "title": "地址",
+                "display": "1",
+                "vars": {
+                    "items": {
+                        "title": "地址信息",
+                        "value": [
+                            {
+                                "name": "Address",
+                                "value": "ChengDu,Sichuan province shuxihunjie #615 "
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "name": {
+                                "title": "名称",
+                                "value": "Address",
+                                "type": "text",
+                                "tip": "address",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "value": {
+                                "title": "值",
+                                "value": "",
+                                "type": "text",
+                                "tip": "值"
+                            }
+                        },
+                        "tip": "公共底部和contacts页面需要",
+                        "maxNumber": 1,
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
