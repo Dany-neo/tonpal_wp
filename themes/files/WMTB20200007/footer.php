@@ -47,58 +47,70 @@
 
 
     // ======================表单校验======================
-    // ===失去焦点
-    $('body').on('blur', '.inquiry-form .form-item input,.inquiry-form .form-item textarea', function() {
-        if ($(this).val() == '') {
-            $(this).parent().find('span').addClass('warning')
-        } else {
-            $(this).parent().find('span').removeClass('warning')
+    // 校验规则
+    var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+    // input 或 textarea
+    validFun = function(ele) {
+        var text = $(ele).val()
+        var target = $(ele).parent().find('span')
+        // 内容非空
+        if (text == '') {
+            target.addClass('warning')
+            return
         }
+        // 邮箱单独校验
+        if ($(ele).attr('id') == 'email') {
+            if (!reg.test(text)) target.html('Please enter the correct email').addClass('warning')
+            else target.html('').removeClass('warning')
+            return
+        }
+        target.removeClass('warning')
+    }
+    // 失焦自动校验
+    $('body').on('blur', '.inquiry-form .form-item input,.inquiry-form .form-item textarea', function() {
+        validFun(this);
     })
     // ===提交按钮
     $('body').on('click', '#customer_submit_button', function() {
-        var flag = true
-        $('.inquiry-form .form-item').each(function(i, ele) {
-            var text = ''
-            if ($(ele).find('input').length != 0) text = $(ele).find('input').val()
-            else text = $(ele).find('textarea').val()
-
-            if (text == '') {
-                $(ele).find('span').addClass('warning')
-                flag = false
-            }
+        // 点击提交 手动校验
+        $('.inquiry-form .form-item').each(function(i, item) {
+            var ele = $(item).find('input')
+            if (ele.length == 0) ele = $(item).find('textarea')
+            validFun(ele);
         })
+        if ($('.inquiry-form .form-item .warning').length !== 0) return
 
-        if (!flag) return
 
+        alert('ok')
         // 发送ajax
-        var aop_param = {};
-        aop_param.product_title = $("#product_title").val();
-        aop_param.contact_name = $("#name").val();
-        aop_param.contact_email = $("#email").val();
-        aop_param.contact_subject = $("#phone").val();
-        aop_param.contact_comment = $("#message").val();
-        aop_param.organization_id = $("#organization_id").val();
+        // var aop_param = {};
+        // aop_param.product_title = $("#product_title").val();
+        // aop_param.contact_name = $("#name").val();
+        // aop_param.contact_email = $("#email").val();
+        // aop_param.contact_subject = $("#phone").val();
+        // aop_param.contact_comment = $("#message").val();
+        // aop_param.organization_id = $("#organization_id").val();
 
-        if (location.href.indexOf('?') > -1) {
-            aop_param.reference = location.href.split('?')[0];
-        } else {
-            aop_param.reference = location.href;
-        }
-        $.ajax({
-            url: "//tonpal.aiyongbao.com/action/savemessage",
-            dataType: 'jsonp',
-            type: 'GET',
-            data: aop_param,
-            success: function(rsp) {
-                alert('Sent successfully');
-                $("#customer_submit_button").removeAttr("disabled");
-                location.reload();
-            },
-            error: function(rsp, textStatus, errorThrown) {
-                $("#customer_submit_button").removeAttr("disabled");
-                alert('error');
-            }
-        });
+
+        // if (location.href.indexOf('?') > -1) {
+        //     aop_param.reference = location.href.split('?')[0];
+        // } else {
+        //     aop_param.reference = location.href;
+        // }
+        // $.ajax({
+        //     url: "//tonpal.aiyongbao.com/action/savemessage",
+        //     dataType: 'jsonp',
+        //     type: 'GET',
+        //     data: aop_param,
+        //     success: function(rsp) {
+        //         alert('Sent successfully');
+        //         $("#customer_submit_button").removeAttr("disabled");
+        //         location.reload();
+        //     },
+        //     error: function(rsp, textStatus, errorThrown) {
+        //         $("#customer_submit_button").removeAttr("disabled");
+        //         alert('error');
+        //     }
+        // });
     })
 </script>
