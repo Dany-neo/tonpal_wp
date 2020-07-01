@@ -49,7 +49,7 @@ $contacts_desc = 'We have received your message, we will contact you very soon. 
                 </ul>
 
                 <div class="form-btn-wrapx">
-                    <input type="hidden" name="organization_id" id="organization_id" value="084ce65a-1973-11e9-bbf8-7cd30a51ed1a">
+                    <input type="hidden" name="" id="reference" value="<?php echo get_lang_page_url() ?>">
                     <input type="hidden" name="product_title" id="product_title" value="<?php echo $type_title; ?>">
                     <div id="customer_submit_button" class="wpcf7-form-control wpcf7-submit form-btn-submitx" style="cursor: pointer;user-select: none;"><?php echo $message_btn; ?></div>
                 </div>

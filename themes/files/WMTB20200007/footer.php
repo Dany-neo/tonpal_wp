@@ -82,11 +82,12 @@
 
         // 发送ajax
         var aop_param = {};
-        aop_param.product_title = $("#product_title").val();
+        aop_param.post_name = $("#product_title").val();
         aop_param.name = $("#name").val();
         aop_param.email = $("#email").val();
         aop_param.phone = $("#phone").val();
         aop_param.message = $("#message").val();
+        aop_param.reference = $("#reference").val();
 
         $.ajax({
             url: "/wp-json/portal/v1/inquiry",
@@ -99,6 +100,7 @@
                     return
                 }
                 $("#customer_submit_button").removeAttr("disabled");
+                alert('Send successfully')
             },
             error: function(rsp, textStatus, errorThrown) {
                 $("#customer_submit_button").removeAttr("disabled");
