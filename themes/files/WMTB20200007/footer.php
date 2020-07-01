@@ -80,37 +80,30 @@
         })
         if ($('.inquiry-form .form-item .warning').length !== 0) return
 
-
-        alert('ok')
         // 发送ajax
-        // var aop_param = {};
-        // aop_param.product_title = $("#product_title").val();
-        // aop_param.contact_name = $("#name").val();
-        // aop_param.contact_email = $("#email").val();
-        // aop_param.contact_subject = $("#phone").val();
-        // aop_param.contact_comment = $("#message").val();
-        // aop_param.organization_id = $("#organization_id").val();
+        var aop_param = {};
+        aop_param.product_title = $("#product_title").val();
+        aop_param.name = $("#name").val();
+        aop_param.email = $("#email").val();
+        aop_param.phone = $("#phone").val();
+        aop_param.message = $("#message").val();
 
-
-        // if (location.href.indexOf('?') > -1) {
-        //     aop_param.reference = location.href.split('?')[0];
-        // } else {
-        //     aop_param.reference = location.href;
-        // }
-        // $.ajax({
-        //     url: "//tonpal.aiyongbao.com/action/savemessage",
-        //     dataType: 'jsonp',
-        //     type: 'GET',
-        //     data: aop_param,
-        //     success: function(rsp) {
-        //         alert('Sent successfully');
-        //         $("#customer_submit_button").removeAttr("disabled");
-        //         location.reload();
-        //     },
-        //     error: function(rsp, textStatus, errorThrown) {
-        //         $("#customer_submit_button").removeAttr("disabled");
-        //         alert('error');
-        //     }
-        // });
+        $.ajax({
+            url: "/wp-json/portal/v1/inquiry",
+            type: 'post',
+            data: aop_param,
+            success: function(rsp) {
+                if (rsp.code != 1) {
+                    $("#customer_submit_button").removeAttr("disabled");
+                    alert('error');
+                    return
+                }
+                $("#customer_submit_button").removeAttr("disabled");
+            },
+            error: function(rsp, textStatus, errorThrown) {
+                $("#customer_submit_button").removeAttr("disabled");
+                alert('error');
+            }
+        });
     })
 </script>

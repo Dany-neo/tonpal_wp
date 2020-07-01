@@ -54,12 +54,12 @@ $max = intval($wp_query->max_num_pages);
 
 
 
-// 假数据调样式
-$products_header_desc = "
-Some enterprises use photos and videos that are not their own. Especially the pictures of factory buildings. Take others' factory buildings 
-and put their company name on P. Now more and more attention is paid to the protection of copyright, and the infringement of pictures has been 
-reported for many times. So no matter from which point of view, we need to use real content.";
-$sub_title = 'many times, So no matter from which point of view'
+// // 假数据调样式
+// $products_header_desc = "
+// Some enterprises use photos and videos that are not their own. Especially the pictures of factory buildings. Take others' factory buildings 
+// and put their company name on P. Now more and more attention is paid to the protection of copyright, and the infringement of pictures has been 
+// reported for many times. So no matter from which point of view, we need to use real content.";
+// $sub_title = 'many times, So no matter from which point of view'
 ?>
 <!--nextpage-->
 

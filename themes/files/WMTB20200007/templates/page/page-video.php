@@ -7,7 +7,6 @@ $video_item = ifEmptyArray($theme_vars['item']['value']);
 
 // Text 数据处理
 $video_title = ifEmptyText($theme_vars['title']['value'], 'video');
-$video_desc = ifEmptyText($theme_vars['desc']['value']);
 
 // SEO
 $seo_title = ifEmptyText($theme_vars['seoTitle']['value'], "$video_title");

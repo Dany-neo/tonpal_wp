@@ -93,7 +93,6 @@ $page_url = $get_full_path . get_category_link($category->term_id);
                                             <a href="<?php the_permalink(); ?>" class="item-more-btn">
                                                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/news-more.png" alt="">
                                             </a>
-                                            <!-- <a href="<?php /*the_permalink();*/ ?>" class="item-more"><?php echo $news_read_more; ?></a> -->
                                         </figcaption>
                                     </figure>
                                 </li>

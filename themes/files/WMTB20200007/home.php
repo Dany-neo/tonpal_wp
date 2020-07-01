@@ -180,7 +180,7 @@ $seo_description = ifEmptyText($home_vars['seoKeywords']['value']);
                 $about_desc = ifEmptyText($about_vars['desc']['value']);
                 $about_btn = ifEmptyText($about_vars['btn']['value']);
                 $about_link = ifEmptyText($about_vars['link']['value']);
-                $about_images = ifEmptyText($about_vars['images']['value']); ?>
+                $about_images = ifEmptyArray($about_vars['images']['value']); ?>
 
                 <section class="index_company_intr">
                     <div class="index_bd">

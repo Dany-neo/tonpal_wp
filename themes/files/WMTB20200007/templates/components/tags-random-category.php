@@ -1,13 +1,22 @@
 <?php
-$sideBarTags = ifEmptyText(get_query_var('sideBarTags'), 'Tag');
-
-/*
-if (is_category()) {
+if( is_single() ) {
+    if (ROOT_CATEGORY_SLUG == 'product') {
+        $term_id = ROOT_CATEGORY_CID;// 父级ID
+    } else {
+        $term_id = get_category_by_slug('product')->term_id; // 获取产品顶级id
+    }
+} elseif ( is_category() ) {
     $term_id = get_category($cat)->term_id;
-} elseif (is_single()) {
-    $term_id = ROOT_CATEGORY_CID;
+    $pid = get_category_root_id($term_id);
+    $the_slug = get_category($pid)->slug;
+    if ($the_slug == 'news') {
+        $term_id = get_category_by_slug('product')->term_id; // 获取产品顶级id
+    }
+} else {
+    $term_id = get_category_by_slug('product')->term_id; // 获取产品顶级id
 }
-$tags = get_random_tags($term_id, 5); // 随机获取当前分类的tags
+$tags = get_random_tags($term_id,5); // 随机获取当前分类的tags
+
 if (ifEmptyArray($tags) !== []) { ?>
     <div class="tab-content-wrap product-detail">
         <div class="tab-panel-wrap tags-random-list">
@@ -19,20 +28,3 @@ if (ifEmptyArray($tags) !== []) { ?>
         </div>
     </div>
 <?php } ?>
-*/
-
-
-// 假数据填充
-$tags = json_config_array('text', 'vars')['image']['value'];
-if (ifEmptyArray($tags) !== []) { ?>
-    <div class="tab-content-wrap product-detail">
-        <div class="tab-panel-wrap tags-random-list">
-            <div class="tab-panel-content">
-                <?php foreach ($tags as $item) { ?>
-                    <a href=""><?php echo $item['name'] ?></a>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-<?php }
-?>

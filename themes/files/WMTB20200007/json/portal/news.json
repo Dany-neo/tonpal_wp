@@ -41,15 +41,6 @@
                     "require": true
                 }
             },
-            "readMore": {
-                "title": "按钮",
-                "type": "text",
-                "value": "READ MORE",
-                "tip": "eg:READ MORE",
-                "rule": {
-                    "require": true
-                }
-            },
             "nullTip": {
                 "title": "提示语",
                 "type": "text",
