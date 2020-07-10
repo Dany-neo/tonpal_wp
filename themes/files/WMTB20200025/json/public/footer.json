@@ -39,6 +39,12 @@
                 "value": "http://www.linkedin.com/company/1609999?trk=tyah&trkInfo=clickedVertical%3Acompany%2CentityType%3AentityHistoryName%2CclickedEntityId%3Acompany_1609999%2Cidx%3A0",
                 "type": "text",
                 "tip": "未填写则隐藏"
+            },
+            "lingYing": {
+                "title": "领英 链接",
+                "value": "http://www.linkedin.com/company/1609999?trk=tyah&trkInfo=clickedVertical%3Acompany%2CentityType%3AentityHistoryName%2CclickedEntityId%3Acompany_1609999%2Cidx%3A0",
+                "type": "text",
+                "tip": "未填写则隐藏"
             }
         },
         "widgets": {

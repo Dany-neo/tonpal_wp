@@ -32,6 +32,18 @@
                     "require": true
                 }
             },
+            "headerDesc": {
+                "title": "头部描述",
+                "type": "text",
+                "value": "范德萨发生",
+                "tip": "产品主类目头部描述"
+            },
+            "footerDesc": {
+                "title": "尾部描述",
+                "type": "text",
+                "value": "范德萨发生",
+                "tip": "产品主类目尾部描述"
+            },
             "nullTip": {
                 "title": "提示语",
                 "type": "text",

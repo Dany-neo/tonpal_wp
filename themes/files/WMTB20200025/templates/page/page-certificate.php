@@ -75,7 +75,7 @@ $seo_keywords = ifEmptyText($theme_vars['seoKeywords']['value']);
     <title><?php echo $seo_title; ?></title>
     <meta name="keywords" content="<?php echo $seo_keywords; ?>" />
     <meta name="description" content="<?php echo $seo_description; ?>" />
-    
+
     <?php get_template_part('templates/components/head'); ?>
 </head>
 
@@ -148,7 +148,7 @@ $seo_keywords = ifEmptyText($theme_vars['seoKeywords']['value']);
 <script>
     var all_data = []; //全部数据
     var current = 1; //当前页码
-    var per_page = 10; //每页码数
+    var per_page = 9; //每页码数
     var all_page = 1; //总页数
     var render_dom = "wm-page"; //渲染dom
     var pagination = []; //分页数据

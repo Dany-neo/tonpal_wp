@@ -24,9 +24,15 @@ $args = array(
 
 $related_posts = query_posts($args);
 if (ifEmptyArray($related_posts) !== []) {
+    // header.json
+    $theme_vars_header = json_config_array('header', 'vars', 1);
+    $related_products = ifEmptyText($theme_vars_header['relatedProducts']['value'], 'RELATED PRODUCTS');
 ?>
+
     <div class="goods-may-like">
-        <h2 class="title">RELATED PRODUCTS</h2>
+        <div class="goods-title-bar main-tit-bar">
+            <h2 class="title"><?php echo $related_products; ?></h2>
+        </div>
         <div class="layer-bd">
             <div class="swiper-slider">
                 <ul class="swiper-wrapper">
@@ -55,6 +61,8 @@ if (ifEmptyArray($related_posts) !== []) {
             </div>
         </div>
     </div>
+    <div style="height: 55px;"></div>
+
 <?php }
 wp_reset_query(); // 重置query 防止影响其他query查询 
 ?>

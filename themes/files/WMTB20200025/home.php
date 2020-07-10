@@ -37,18 +37,16 @@ $readBtn = ifEmptyText(json_config_array('header', 'vars', 1)['readBtn']['value'
             height: 100%
         }
 
-        .fontOTW {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
         .company_img_box figure iframe {
             width: 100%
         }
 
         .company_img_box figure {
-            display: flex
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
         }
 
         .index_main .news_thumbs ul.swiper-wrapper li a img {
@@ -169,7 +167,7 @@ $readBtn = ifEmptyText(json_config_array('header', 'vars', 1)['readBtn']['value'
                                                     </span>
                                                     <figcaption>
                                                         <h3 class="item_title"><a href="<?php echo $item['link'] ?>"><span class="home-product-span"><?php echo $item['title'] ?></span></a></h3>
-                                                        <p class="item_desc fontOTW"><?php echo $item['desc'] ?></p>
+                                                        <p class="item_desc"><?php echo $item['desc'] ?></p>
                                                     </figcaption>
                                                 </figure>
                                             </li>
@@ -288,7 +286,7 @@ $readBtn = ifEmptyText(json_config_array('header', 'vars', 1)['readBtn']['value'
                                                                         <?php echo $item['desc'] ?></p>
                                                                 </div>
                                                                 <div class="learn_more">
-                                                                    <a href="<?php $item['link'] ?>" class="sys_btn sys_btn_wave"><?php echo $readBtn ?><i class="btn_wave_circle"></i></a>
+                                                                    <a href="<?php echo $item['link'] ?>" class="sys_btn sys_btn_wave"><?php echo $readBtn ?><i class="btn_wave_circle"></i></a>
                                                                 </div>
                                                             </div>
                                                         </li>

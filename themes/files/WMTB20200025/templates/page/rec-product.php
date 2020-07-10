@@ -76,7 +76,7 @@ $recent_posts = get_category_new_product('product', array(), 40, 'OBJECT');
                                     <li class="product-item">
                                         <figure class="item-wrap">
                                             <a href="<?php echo get_permalink($item->ID); ?>" target="_blank" class="item-img">
-                                                <img src="<?php echo $thumbnail ?>_thumb_262x262.jpg" alt="<?php echo $item->post_title; ?>" />
+                                                <img src="<?php echo $thumbnail ?>" alt="<?php echo $item->post_title; ?>" />
                                             </a>
                                             <figcaption class="item-info">
                                                 <h3 class="item-title">

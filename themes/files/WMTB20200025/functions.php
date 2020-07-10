@@ -458,7 +458,7 @@ function custom_posts_per_page($query)
             $slug = $slug[1];
         }
         if ($slug === 'news' || $slug === 'info-product' || $slug === 'info-news') {
-            $query->set('posts_per_page', 3);
+            $query->set('posts_per_page', 4);
         } else if ($slug == 'product') {
             $query->set('posts_per_page', get_posts_per_page_num());
         }
@@ -500,6 +500,7 @@ function get_random_tags($term_id, $num)
         'orderby' => 'list_order',
         'order' => 'desc',
     ]);
+
     if (!empty($data)) {
         foreach ($data as $item) {
             // 获取二级类目
@@ -518,7 +519,6 @@ function get_random_tags($term_id, $num)
         }
     }
     $term_id_string = substr($term_id_string, 0, -1);
-
 
 
     $sql = "

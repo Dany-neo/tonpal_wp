@@ -61,7 +61,7 @@ if (have_posts()) {
                                         <figure>
                                             <span class="item_img">
                                                 <a href="<?php the_permalink() ?>"> </a>
-                                                <img src="<?php echo $item->thumbnail; ?>_thumb_262x262.jpg" alt="<?php echo $item->post_title; ?>">
+                                                <img src="<?php echo $item->thumbnail; ?>" alt="<?php echo $item->post_title; ?>">
                                             </span>
                                             <figcaption>
                                                 <h3 class="item_title">

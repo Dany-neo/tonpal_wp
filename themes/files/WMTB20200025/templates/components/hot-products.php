@@ -43,7 +43,7 @@ if (ifEmptyArray($recent_posts) !== []) {
                         <li class="swiper-slide gm-sep side_product_item">
                             <figure>
                                 <a href="<?php echo get_permalink($recent["ID"]); ?>" class="item-img">
-                                    <img src="<?php echo $thumbnail ?>_thumb_262x262.jpg" alt="<?php echo $recent["post_title"]; ?>" />
+                                    <img src="<?php echo $thumbnail ?>" alt="<?php echo $recent["post_title"]; ?>" />
                                 </a>
                                 <figcaption>
                                     <h3 class="item_title">

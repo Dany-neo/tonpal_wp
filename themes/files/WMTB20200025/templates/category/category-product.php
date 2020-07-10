@@ -6,8 +6,16 @@ $theme_vars = json_config_array('products', 'vars');
 // Text 数据处理
 $products_bg = ifEmptyText(get_term_meta($cat, 'background', true));
 
-$products_header_desc = ifEmptyText(get_term_meta($cat, 'header_desc', true));
-$products_footer_desc = ifEmptyText(get_term_meta($cat, 'footer_desc', true));
+if (count(explode('/', $_SERVER['REQUEST_URI'])) == 2) {
+    // 主类目
+    $products_header_desc = $theme_vars['headerDesc']['value'];
+    $products_footer_desc = $theme_vars['footerDesc']['value'];
+} else {
+    // 子类目
+    $products_header_desc = ifEmptyText(get_term_meta($cat, 'header_desc', true));
+    $products_footer_desc = ifEmptyText(get_term_meta($cat, 'footer_desc', true));
+}
+
 $products_null_tip = ifEmptyText($theme_vars['nullTip']['value']);
 
 $sub_title = ifEmptyText(get_term_meta($cat, 'sub_title', true));  // 分类小标题 预设 后台暂时未有填写位置 注意：当小标题存在时h1标签优先设置
@@ -114,13 +122,7 @@ $max = intval($wp_query->max_num_pages);
                         <?php } ?>
                     </header>
 
-                    <!-- <?php if ($products_bg !== '') { ?>
-                        <div class="main-banner">
-                            <img src="<?php echo $products_bg; ?>" style="width:912px;height:312px;margin-bottom: 30px;">
-                        </div>
-                    <?php } elseif ($products_header_desc !== '') { ?>
-                        <p class="class-desc mt-15" style="margin-bottom:15px;"><?php echo $products_header_desc; ?></p>
-                    <?php } ?> -->
+                    <p class="product-desc"><?php echo $products_header_desc; ?></p>
 
                     <!-- product list -->
                     <div class="items_list">
@@ -134,7 +136,7 @@ $max = intval($wp_query->max_num_pages);
                                         <figure class="item-wrap">
                                             <span class='item_img'>
                                                 <a href="<?php echo get_permalink($item->ID); ?>"> </a>
-                                                <img src="<?php echo $thumbnail ?>_thumb_262x262.jpg" alt="<?php echo $item->post_title; ?>" />
+                                                <img src="<?php echo $thumbnail ?>" alt="<?php echo $item->post_title; ?>" />
                                             </span>
 
                                             <figcaption class="item-info">

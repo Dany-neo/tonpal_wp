@@ -24,6 +24,10 @@ $pdf = ifEmptyText(get_post_meta(get_post()->ID, 'pdf', true));
     <?php get_template_part('templates/components/head') ?>
     <style>
         .pagesList {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
             display: flex;
         }
 

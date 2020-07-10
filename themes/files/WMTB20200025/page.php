@@ -7,6 +7,7 @@
 	endwhile;
 	if(strtolower($data->post_name) == 'aboutus')
 	{	
+		// include('templates/page/page-about.php');
 		include('templates/page/page-about.php');
 	}
 	elseif(strtolower($data->post_name) == 'contactus')
@@ -21,13 +22,17 @@
     {
         include('templates/page/page-showcase.php');
     }
-    elseif(strtolower($data->post_name) == 'certificate')
+    elseif(strtolower($data->post_name) == 'certificate'  ||strtolower($data->post_name) == 'picturewell' )
     {
         include('templates/page/page-certificate.php');
     }
     elseif(strtolower($data->post_name) == 'rec-product')
     {
         include('templates/page/rec-product.php');
+    }
+    elseif(strtolower($data->post_name) == 'privacy-policy-page')
+    {
+        include('templates/page/privacy-policy.php');
     }
 	else{
 		include('templates/page/page.php');

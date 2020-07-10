@@ -16,6 +16,7 @@ $contactus_btn = $footer_vars['contactBtn']['value'];
 $facebookLink = ifEmptyText($footer_vars['facebookLink']['value']);
 $twitterLink = ifEmptyText($footer_vars['twitterLink']['value']);
 $youtubeLink = ifEmptyText($footer_vars['youtubeLink']['value']);
+$lyLink = ifEmptyText($footer_vars['lingYing']['value']);
 ?>
 
 <footer class="web_footer">
@@ -29,7 +30,7 @@ $youtubeLink = ifEmptyText($footer_vars['youtubeLink']['value']);
                             <h2 class="subscribe_title"><?php echo $subscribe_title ?></h2>
                             <p class="subscribe_desc"><?php echo $subscribe_desc ?></p>
                             <div class="learn_more">
-                                <a href="/contactus.html" class="sys_btn button"><?php echo $contactus_btn ?></a>
+                                <a href="/contactus" class="sys_btn button"><?php echo $contactus_btn ?></a>
                             </div>
                         </div>
                     </div>
@@ -57,6 +58,9 @@ $youtubeLink = ifEmptyText($footer_vars['youtubeLink']['value']);
                             <?php if (!empty($youtubeLink)) { ?>
                                 <li> <a href="<?php echo $youtubeLink ?>" target="_blank"><img src="//q.zvk9.com/Model27/assets/images/sns06.png" alt=""></a> </li>
                             <?php } ?>
+                            <?php if (!empty($lyLink)) { ?>
+                                <li> <a href="<?php echo $lyLink ?>" target="_blank"><img style="object-fit:contain;margin-top: -2px;" src="<?php echo get_template_directory_uri() ?>/assets/image/lyLink.png" alt=""></a> </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </nav>
@@ -65,7 +69,7 @@ $youtubeLink = ifEmptyText($footer_vars['youtubeLink']['value']);
     </div>
     <div class="foot_bar wow fadeInUpA" data-wow-delay=".2s" data-wow-duration=".8s">
         <div class="layout">
-            <div class="copyright"><?php echo $organization_name ?> Copyright &copy; <?php echo date('Y') ?> | <a href="/privacy_policy.html" style="text-decoration: underline;">Privacy Policy</a> | <a href="/sitemap.xml" style="text-decoration: underline;">Sitemap</a>
+            <div class="copyright"><?php echo $organization_name ?> Copyright &copy; <?php echo date('Y') ?> | <a href="/privacy-policy-page" style="text-decoration: underline;">Privacy Policy</a> | <a href="/sitemap.xml" style="text-decoration: underline;">Sitemap</a>
                 <?php if (get_category_by_slug('info-news')) print_r('|  <a href="/info-news">INFO NEWS</a>'); ?>
                 <?php if (get_category_by_slug('info-product')) print_r('|  <a href="/info-product">INFO PRODUCT</a>'); ?>
             </div>

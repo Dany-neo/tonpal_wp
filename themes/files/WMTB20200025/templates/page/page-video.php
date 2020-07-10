@@ -11,7 +11,7 @@ $page_data = $video_item;
 // 取json数据时分页
 function jsonData_page_size()
 {
-    return 4;
+    return 6;
 }
 function get_jsonData_page($total)
 {
@@ -53,6 +53,10 @@ function get_jsonData_page($total)
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
+        }
+
+        .video-list  {
+            margin-right: 30px;
         }
     </style>
 </head>

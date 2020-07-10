@@ -3,13 +3,18 @@ $sideBarTags = ifEmptyText(get_query_var('sideBarTags'), 'Tag');
 if (is_single()) {
     $term_id = ROOT_CATEGORY_CID;
     $tags = get_random_tags($term_id, 5); // 随机获取当前分类的tags
+    var_dump('1');
 } elseif (is_category()) {
     $category = get_category($cat);
     $tags = get_random_tags($category->term_id, 10);
+
+    // var_dump($category);
 } elseif (is_tag()) {
     $the_name = single_tag_title('', false);
     $tags = get_terms('post_tag', array('name__like' => "$the_name", 'fields' => 'all'));
+    var_dump('3');
 }
+
 
 if (ifEmptyArray($tags) !== []) {
 ?>

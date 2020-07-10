@@ -3,7 +3,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link href="//q.zvk9.com/Model27/assets/css/style.css" rel="stylesheet">
+<link href="https://q.zvk9.com/Model27/assets/css/style.css" rel="stylesheet">
 <style>
     p {
         word-break: break-word !important;

@@ -2,56 +2,6 @@
 <script type="text/javascript" src="//q.zvk9.com/Model27/assets/js/common.js"></script>
 
 <script type="text/javascript" defer>
-    // function search() {
-    //     $.ajax({
-    //         url: "/search.php",
-    //         type: 'get',
-    //         // dataType: 'JSON',
-    //         data: {
-    //             "keyword": JSON.stringify($(".search-text").val())
-    //         },
-    //         success: function(data) {
-    //             window.open("http://" + $(".search_url").val() + '/?s=' + $(".search-text").val());
-    //         },
-    //         error: function(error) {
-    //             console.log(error);
-    //         }
-    //     });
-    // }
-    $('#customer_submit_button').on('click', function() {
-
-        $("#customer_submit_button").attr("disabled", "disabled");
-
-        var aop_param = {};
-
-        aop_param.product_title = $("#product_title").val();
-        aop_param.contact_name = $("#name").val();
-        aop_param.contact_email = $("#email").val();
-        aop_param.contact_subject = $("#phone").val();
-        aop_param.contact_comment = $("#message").val();
-        aop_param.organization_id = $("#organization_id").val();
-        if (location.href.indexOf('?') > -1) {
-            aop_param.reference = location.href.split('?')[0];
-        } else {
-            aop_param.reference = location.href;
-        }
-        $.ajax({
-            url: "//tonpal.aiyongbao.com/action/savemessage",
-            dataType: 'jsonp',
-            type: 'GET',
-            data: aop_param,
-            success: function(rsp) {
-                alert('Sent successfully');
-                $("#customer_submit_button").removeAttr("disabled");
-                location.reload();
-            },
-            error: function(rsp, textStatus, errorThrown) {
-                $("#customer_submit_button").removeAttr("disabled");
-                alert('error');
-            }
-        });
-        return false;
-    });
     /*小语种切换*/
     function changeLanguage(language_abbr) {
         var location_url = window.location.host;
@@ -86,20 +36,6 @@
             window.location.href = '//' + location_url + abbr
         }
     }
-    // $(function() {
-    //     init();
-    // });
-
-    // function init() {
-    //     var url = '//tonpal.aiyongbao.com/hm/index';
-    //     var data = {};
-
-    //     data['address'] = window.location.href;
-
-    //     $.post(url, data, function(res) {
-    //         console.log(res);
-    //     });
-    // }
 
     // 解决导航移入bug
     $('.head_nav>li a').each(function() {
@@ -120,7 +56,6 @@
             window.open("http://" + window.location.host + '/?s=' + $(".search-text").val())
         } else {
             $('.head-search').addClass('open')
-            $('.nav_wrap.no-language .head_nav>li>a').css('padding', '0 15px')
         }
     })
 
@@ -159,6 +94,7 @@
             if ($(this).hasClass('current') != true) page_action($('.json_page .current'), $(this))
         }
     })
+
     function page_action(removeEle, addEle) {
         addEle.addClass('current')
         removeEle.removeClass('current');
@@ -195,4 +131,74 @@
         var src = $(`.product-view .image-additional li:nth-child(${n+1}) img`).attr('src')
         imgEle.attr('num', n).attr('src', src)
     }
+
+    // ======================表单校验======================
+    // 校验规则
+    var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+    // input 或 textarea
+    validFun = function(ele) {
+        var text = $(ele).val()
+        var target = $(ele).parent().find('span')
+        // 内容非空
+        if (text == '') {
+            target.addClass('warning')
+            return
+        }
+        // 邮箱单独校验
+        if ($(ele).attr('id') == 'email') {
+            if (!reg.test(text)) target.html('Please enter the correct email').addClass('warning')
+            else target.html('').removeClass('warning')
+            return
+        }
+        target.removeClass('warning')
+    }
+    // 失焦自动校验
+    $('body').on('blur', '.send-form .send-form-item input,.send-form .send-form-item textarea', function() {
+        validFun(this);
+    })
+    // ===提交按钮
+    $('body').on('click', '#customer_submit_button', function() {
+        // disabled类名 避免多次提交
+        if ($(this).hasClass('disabled')) return
+
+        // 点击提交 手动校验
+        $('.send-form .send-form-item').each(function(i, item) {
+            var ele = $(item).find('input')
+            if (ele.length == 0) ele = $(item).find('textarea')
+            validFun(ele);
+        })
+        if ($('.send-form .send-form-item .warning').length !== 0) return
+
+        $(this).addClass('disabled')
+
+        // 发送ajax
+        var aop_param = {};
+        aop_param.post_name = $("#product_title").val();
+        aop_param.name = $("#name").val();
+        aop_param.email = $("#email").val();
+        aop_param.phone = $("#phone").val();
+        aop_param.message = $("#message").val();
+        aop_param.reference = $("#reference").val();
+
+
+        $.ajax({
+            url: "/wp-json/portal/v1/inquiry",
+            type: 'post',
+            data: aop_param,
+            success: function(rsp) {
+                if (rsp.code != 1) {
+                    $("#customer_submit_button").removeClass("disabled");
+                    alert('error');
+                } else {
+                    alert('Send successfully')
+                    $("#customer_submit_button").removeClass("disabled");
+                    location.reload();
+                }
+            },
+            error: function(rsp, textStatus, errorThrown) {
+                $("#customer_submit_button").removeClass("disabled");
+                alert('error');
+            }
+        });
+    })
 </script>

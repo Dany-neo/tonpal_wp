@@ -21,6 +21,10 @@ $page_url = get_full_path();
     <?php get_template_part('templates/components/head') ?>
     <style>
         .pagesList {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
             display: flex;
         }
 

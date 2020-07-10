@@ -2,6 +2,13 @@
 .slider_banner .swiper-button-next:after {
   background-color: #0497e6;
 }
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
 .index_hd .hd_title h2 {
   color: #0497e6;
   font-weight: bold;
@@ -169,7 +176,14 @@
 }
 .wm_head .layout,
 .wm_head .nav_wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 .wm_head .logo,
@@ -711,15 +725,32 @@ textarea::-webkit-input-placeholder {
 }
 .page-video {
   margin-bottom: 30px;
+  /* 视频页 限制标题 */
 }
 .page-video > ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   margin: 0;
 }
 .page-video > ul::after {
   display: none;
+}
+.page-video li,
+.page-video .item-info,
+.page-video .item-title {
+  max-width: 455px;
+}
+.page-video .item-info {
+  display: block;
+  padding: 23px 0;
 }
 .page-video .item-img {
   width: 455px;
@@ -730,10 +761,13 @@ textarea::-webkit-input-placeholder {
   padding-left: 20px;
   color: #2d2d2d;
   font-size: 16px;
-  padding: 23px 0;
+  overflow: hidden;
   text-indent: 23px;
 }
 .page-certificate > ul {
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 .page-certificate .product_item {
@@ -973,7 +1007,14 @@ textarea::-webkit-input-placeholder {
 .json_page ul {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 .json_page li {
@@ -1059,6 +1100,9 @@ textarea::-webkit-input-placeholder {
   }
   /* 企业荣耀页 */
   .page-certificate > ul {
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
   }
   .page-certificate li p {
@@ -1091,6 +1135,10 @@ textarea::-webkit-input-placeholder {
   }
   /* rec-product */
   .rec-product .items_list > ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1099,6 +1147,10 @@ textarea::-webkit-input-placeholder {
   }
   /* 视频 */
   .page-video ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1113,6 +1165,7 @@ textarea::-webkit-input-placeholder {
     border: none;
   }
   .page-video .item-title {
+    max-width: 100%;
     padding: 0;
     height: 30px;
     line-height: 30px;
@@ -1129,8 +1182,15 @@ textarea::-webkit-input-placeholder {
   }
   /* 产品详情 */
   .single-product-main {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
   }
   .single-product-main > div {
@@ -1190,6 +1250,10 @@ textarea::-webkit-input-placeholder {
   }
   /* tag */
   .index_tags ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1205,6 +1269,10 @@ textarea::-webkit-input-placeholder {
     right: 22%;
   }
   .index_tags .blog-item figure {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
   }
   .index_tags .blog-item figure > a {
@@ -1226,6 +1294,10 @@ textarea::-webkit-input-placeholder {
   }
   /* 新闻页 */
   .category-news .blog-item figure {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
   }
   .category-news .blog-item figure .item-wrap a {
@@ -1273,8 +1345,15 @@ textarea::-webkit-input-placeholder {
 }
 /* 产品详情页 产品图片 */
 .product-view .image-items {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   padding: 0 10px;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 .product-view .image-items .image-item {
@@ -1318,4 +1397,67 @@ textarea::-webkit-input-placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+}
+/* 首页产品描述 超出隐藏 */
+.index_main .product_item .item_desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+/* 产品列表 左对齐 */
+.items_list ul {
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  justify-content: flex-start !important;
+}
+/* 产品列表 内容等宽 */
+.product_item .item_title a {
+  padding-left: 0 !important;
+}
+/* 新闻列表 超出隐藏 */
+.blog-item .item-info .item-title {
+  -webkit-line-clamp: 1;
+}
+.blog-item .item-info .item-detail {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+/* 头部导航 自适应 */
+.wm_head .nav_wrap {
+  text-align: center;
+}
+.wm_head .head_nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.wm_head .head_nav > li > a {
+  padding-left: 13px !important;
+  padding-right: 13px !important;
+}
+.wm_head .head_nav > li > a em {
+  display: block !important;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.nav_wrap .head_nav > li + li:after {
+  top: 15px;
+  margin: 0;
 }
